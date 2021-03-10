@@ -18,6 +18,7 @@ $(this).keyup((e) => {
 });
 //keypress event listener
 body.keypress((e) => {
+    //select id by key pressed and animate key on screen by changing styles for 50ms
     $(`#${e.which}`).animate({
         padding: "26px",
         borderRadius: "8px"
@@ -27,5 +28,5 @@ body.keypress((e) => {
             padding: "24px",
             borderRadius: "6px"
         }, 50);
-    })
-})
+    });
+});
