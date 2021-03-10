@@ -4,6 +4,10 @@ const sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato 
 let sentenceCount = 0;
 //counter for keys pressed
 let keyPress = 0;
+//number of words
+const words = 54;
+//mistakes counter
+let mistakes = 0;
 //grab #sentence
 const sentence = $("#sentence");
 //add sentences array to #sentence
