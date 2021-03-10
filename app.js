@@ -7,7 +7,7 @@ let keyPress = 0;
 //grab #sentence
 const sentence = $("#sentence");
 //add sentences array to #sentence
-sentence.append(sentences[sentenceCount]);
+sentence.append(sentences[0]);
 //grab target-letter
 const targetLetter = $("#target-letter");
 //insert correct letter into target for starting position
