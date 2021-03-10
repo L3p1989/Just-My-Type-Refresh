@@ -2,8 +2,16 @@
 const sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato too nOt enot one totA not anot tOO aNot', 'oat itain oat tain nate eate tea anne inant nean', 'itant eate anot eat nato inate eat anot tain eat', 'nee ene ate ite tent tiet ent ine ene ete ene ate'];
 //counter for sentences
 let sentenceCount = 0;
+//counter for keys pressed
+let keyPress = 0;
+//grab #sentence
+const sentence = $("#sentence");
 //add sentences array to #sentence
-$("#sentence").append(sentences[sentenceCount]);
+sentence.append(sentences[sentenceCount]);
+//grab target-letter
+const targetLetter = $("#target-letter");
+//insert correct letter into target for starting position
+targetLetter.append(sentences[0][0]);
 //grab keyboard upper container
 const keybrdUpper = $("#keyboard-upper-container");
 //hide keybrdUpper
