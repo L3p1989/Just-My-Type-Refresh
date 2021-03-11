@@ -27,7 +27,9 @@ keybrdUpper.hide();
 //grab keyboard-lower-container
 const keybrdLower = $("#keyboard-lower-container");
 //grab body
-const body = $('body')
+const body = $('body');
+//grab #yellow-block
+const yellowBlock = $("#yellow-block");
 //keydown event listener
 body.keydown((e) => {
     //if shift is pressed shows keybrdUpper and hides keybrdLower
@@ -59,6 +61,10 @@ body.keypress((e) => {
         keysPressed++;
         //targetLetter text is current expected character
         targetLetter.text(sentences[sentenceCount][keysPressed]);
+        //move yellowBlock forward
+        yellowBlock.animate({
+            left: "+=17.5px"
+        }, 0.1);
     } else {
         //for feedBack remove class .glyphicon-ok, text displayed "✗", and add class .glyphicon-remove
         feedBack.removeClass("glyphicon-ok").text("✗").addClass("glyphicon-remove");
