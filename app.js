@@ -81,5 +81,9 @@ body.keypress((e) => {
         sentence.text(sentences[sentenceCount]);
         //targetLetter text is current expected character
         targetLetter.text(sentences[sentenceCount][keysPressed]);
+        //reset yellowBlock
+        yellowBlock.animate({
+            left: "15px"
+        }, 0.1);
     }
 });
