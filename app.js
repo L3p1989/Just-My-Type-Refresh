@@ -3,11 +3,15 @@ const sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato 
 //counter for sentences
 let sentenceCount = 0;
 //counter for keys pressed
-let keyPress = 0;
+let keysPressed = 0;
 //number of words
 const words = 54;
 //mistakes counter
 let mistakes = 0;
+//make a start time
+const startTime = new Date();
+//grab feedback
+const feedBack = $("#feedback")
 //grab #sentence
 const sentence = $("#sentence");
 //add sentences array to #sentence
@@ -15,7 +19,7 @@ sentence.append(sentences[0]);
 //grab target-letter
 const targetLetter = $("#target-letter");
 //insert correct letter into target for starting position
-targetLetter.append(sentences[0][0]);
+targetLetter.append(sentences[sentenceCount][keysPressed]);
 //grab keyboard upper container
 const keybrdUpper = $("#keyboard-upper-container");
 //hide keybrdUpper
@@ -47,4 +51,29 @@ body.keypress((e) => {
             borderRadius: "6px"
         }, 50);
     });
+    //if correct button is pressed
+    if (String.fromCharCode(e.which) == sentences[sentenceCount][keysPressed]) {
+        //for feedBack remove class .glyphicon-remove, text displayed "√" and add class .glyphicon-ok
+        feedBack.removeClass("glyphicon-remove").text("√").addClass("glyphicon-ok");
+        //keysPressed + 1
+        keysPressed++;
+        //targetLetter text is current expected character
+        targetLetter.text(sentences[sentenceCount][keysPressed]);
+    } else {
+        //for feedBack remove class .glyphicon-ok, text displayed "✗", and add class .glyphicon-remove
+        feedBack.removeClass("glyphicon-ok").text("✗").addClass("glyphicon-remove");
+        //mistakes add 1
+        mistakes++;
+    };
+    //if you reach the end of a sentence
+    if (sentences[sentenceCount][keysPressed] == [0][47] || [1][46] || [2][47] || [3][47]) {
+        //add 1 to sentenceCount
+        sentenceCount++;
+        //keyspressed is 0
+        keysPressed = 0;
+        //change sentence text to current sentence
+        sentence.text(sentences[sentenceCount]);
+        //targetLetter text is current expected character
+        targetLetter.text(sentences[sentenceCount][keysPressed]);
+    }
 });
