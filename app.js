@@ -62,6 +62,10 @@ body.keypress((e) => {
         $(".keyboard-container").hide();
         //hide spacebar
         $("#32").hide();
+        //hide sentence
+        sentence.hide();
+        //hide yellowBlock
+        yellowBlock.hide();
         //end time
         const endTime = Date.now();
         //get minutes
