@@ -9,7 +9,7 @@ const words = 54;
 //mistakes counter
 let mistakes = 0;
 //make a start time
-const startTime = new Date();
+const startTime = Date.now;
 //grab feedback
 const feedBack = $("#feedback")
 //grab #sentence
@@ -42,6 +42,10 @@ $(this).keyup((e) => {
 });
 //keypress event listener
 body.keypress((e) => {
+    //if you are at the end
+    if (sentenceCount == 4 && keysPressed == 48) {
+        
+    }
     //select id by key pressed and animate key on screen by changing styles for 50ms
     $(`#${e.which}`).animate({
         padding: "26px",
