@@ -56,6 +56,12 @@ body.keypress((e) => {
             //close window
             close();
         });
+        //unbinds event handlers
+        body.unbind();
+        //hide keyboard
+        $(".keyboard-container").hide();
+        //hide spacebar
+        $("#32").hide();
         return alert("you did it!");
     }
     //select id by key pressed and animate key on screen by changing styles for 50ms
