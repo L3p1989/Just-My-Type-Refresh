@@ -40,3 +40,9 @@
 .glyphicon-remove {
   color: #cd2626;
 }
+
+#yes,
+#no {
+  cursor: pointer;
+  user-select: none;
+}
