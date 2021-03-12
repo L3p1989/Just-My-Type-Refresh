@@ -46,6 +46,16 @@ body.keypress((e) => {
     if (sentenceCount == 4 && keysPressed == 48) {
         //feedBack text clears, add to div elements with the text "Try Again?" "√", and "Exit" "✗"
         feedBack.text('').append($('<div class="row col-lg-6 text-center">Try again?</div><div id="yes" class="row col-lg-6 text-center glyphicon-ok">√</div><div class="row col-lg-6 text-center">Exit</div><div id="no" class="row col-lg-6 text-center glyphicon-remove">✗</div>'));
+        //add click event listener to #yes
+        $('#yes').click(() => {
+            //refresh page
+            console.log((document.location.href = ""));
+        });
+        //add click event listener to #no
+        $('#no').click(() => {
+            //close window
+            close();
+        });
         return alert("you did it!");
     }
     //select id by key pressed and animate key on screen by changing styles for 50ms
