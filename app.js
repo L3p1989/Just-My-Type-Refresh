@@ -9,7 +9,7 @@ const words = 54;
 //mistakes counter
 let mistakes = 0;
 //make a start time
-const startTime = Date.now;
+const startTime = Date.now();
 //grab feedback
 const feedBack = $("#feedback")
 //grab #sentence
@@ -62,7 +62,13 @@ body.keypress((e) => {
         $(".keyboard-container").hide();
         //hide spacebar
         $("#32").hide();
-        return alert("you did it!");
+        //end time
+        const endTime = Date.now();
+        //get minutes
+        const minutes = (endTime - startTime) / 1000 / 60
+        //score
+        const score = words / minutes - 2 * mistakes
+        return console.log(Math.round(score));
     }
     //select id by key pressed and animate key on screen by changing styles for 50ms
     $(`#${e.which}`).animate({
