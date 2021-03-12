@@ -72,7 +72,8 @@ body.keypress((e) => {
         const minutes = (endTime - startTime) / 1000 / 60
         //score
         const score = words / minutes - 2 * mistakes
-        return console.log(Math.round(score));
+        //return with text inside targetLetter
+        return targetLetter.text(`Your score is ${Math.round(score)} WPM`)
     }
     //select id by key pressed and animate key on screen by changing styles for 50ms
     $(`#${e.which}`).animate({
